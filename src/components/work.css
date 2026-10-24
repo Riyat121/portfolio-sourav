@@ -1,0 +1,53 @@
+.stack { position: relative; }
+.wk-pin { position: sticky; top: 0; height: 100vh; display: grid; place-items: center; overflow: hidden; z-index: 1; background: var(--bg); }
+.wk-gap { height: 140vh; } /* 80vh for the aperture + 60vh to read the first project */
+.wk-hd { display: flex; flex-direction: column; align-items: center; gap: 4vh; padding: 0 4vw; }
+.wk-hd h2 { font-size: clamp(56px, 15vw, 290px); font-weight: 850; letter-spacing: -0.06em; line-height: 0.84; text-align: left; }
+.wk-sub { max-width: 26em; text-align: center; color: var(--muted); font-size: clamp(14px, 1.2vw, 18px); line-height: 1.4; }
+.wk-dot { display: inline-block; width: 0.62em; height: 0.62em; margin-left: 0.05em; border-radius: 50%; background: var(--ink); vertical-align: -0.04em; }
+.wk-apx { position: absolute; inset: 0; clip-path: circle(0px at 50% 50%); }
+.wk-apx .wk-sheet { position: relative; height: 100vh; min-height: 0; border-radius: 0; }
+
+.wk-sheet {
+  position: sticky; top: 0; z-index: 2; min-height: 100vh;
+  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 5vw; align-items: center;
+  padding: 12vh 5vw 8vh; border-radius: 28px 28px 0 0; background: var(--b); color: var(--f);
+}
+.wk-sc { display: flex; flex-direction: column; align-items: flex-start; }
+.wk-pt { max-width: 8em; margin: 0 0 20px; color: var(--t); font-size: clamp(40px, min(6.6vw, 12vh), 120px); font-weight: 850; line-height: 0.92; letter-spacing: -0.05em; }
+.wk-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; }
+.wk-w { display: inline-block; }
+.wk-oh { margin-bottom: 10px; font-size: clamp(18px, 1.7vw, 26px); font-weight: 750; letter-spacing: -0.01em; }
+.wk-od { max-width: 28em; font-size: clamp(14px, 1.15vw, 18px); line-height: 1.5; opacity: 0.9; }
+.wk-figs { display: flex; flex-wrap: wrap; gap: 1.5rem 3.2rem; margin: 26px 0 22px; }
+.wk-figs dt { font-size: clamp(24px, 2.6vw, 40px); font-weight: 800; letter-spacing: -0.03em; }
+.wk-figs dd { max-width: 13em; margin-top: 2px; font-size: 13px; opacity: 0.85; }
+.wk-pills { display: flex; flex-wrap: wrap; gap: 12px; width: 100%; }
+.wk-pill { display: inline-flex; align-items: center; flex: none; white-space: nowrap; padding: 13px 22px; border: 0; border-radius: 99px; background: var(--p); color: var(--pc); font-size: 15px; font-weight: 650; }
+.wk-pill.ghost { background: transparent; color: var(--f); border: 1.5px solid currentColor; }
+button.wk-pill:hover { background: var(--f); color: var(--b); }
+.wk-rl { margin-top: 20px; font-size: 14px; opacity: 0.85; }
+
+.wk-win { display: flex; flex-direction: column; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 20px; background: #14151a; color: #c9ccd6; box-shadow: 0 50px 90px -20px rgba(0, 0, 0, 0.55); }
+.wk-bar { display: flex; gap: 6px; padding: 12px 14px; background: #101116; }
+.wk-bar i { display: block; width: 9px; height: 9px; border-radius: 50%; background: #3a3c46; }
+.wk-win svg { flex: 1; min-height: 0; width: 100%; }
+
+/* Case-study curtain */
+.cs { position: fixed; inset: 0; z-index: 100; overflow: auto; padding: 14vh 5vw 8vh; background: #101010; color: #f3f0e8; visibility: hidden; }
+.cs-in { max-width: 900px; margin: 0 auto; }
+.cs-in h2 { font-size: clamp(40px, 8vw, 120px); font-weight: 850; letter-spacing: -0.05em; line-height: 0.95; }
+.cs-sub { margin: 18px 0 40px; color: var(--lime); font-weight: 600; }
+.cs-in li { margin: 0 0 16px 1.2em; font-size: clamp(17px, 1.7vw, 24px); line-height: 1.5; opacity: 0.9; }
+.cs-close { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 18px); right: 4vw; z-index: 101; padding: 8px 16px; border: 1.5px solid currentColor; border-radius: 99px; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .wk-sheet { position: relative; grid-template-columns: 1fr; }
+}
+/* Small screens and reduced motion: no pinning, no aperture — plain stacked sheets. */
+@media (max-width: 900px), (prefers-reduced-motion: reduce) {
+  .wk-pin { position: relative; height: auto; display: block; padding: 14vh 4vw 6vh; }
+  .wk-apx { position: relative; inset: auto; clip-path: none !important; margin: 6vh -4vw 0; }
+  .wk-apx .wk-sheet { height: auto; min-height: 100vh; }
+  .wk-gap { display: none; }
+}

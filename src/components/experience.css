@@ -1,0 +1,11 @@
+.ex-row { display: grid; grid-template-columns: 1fr 2fr 2fr; gap: 2vw; align-items: baseline; padding: 28px 0; border-top: 1px solid var(--line); transition: padding 0.3s; }
+.ex-row:hover { padding-left: 1.2vw; }
+.ex-row span { color: var(--muted); font-size: 14px; }
+.ex-row h4 { font-size: clamp(20px, 2.2vw, 32px); font-weight: 800; letter-spacing: -0.02em; }
+.ex-row p { color: var(--muted); }
+.ex-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6vh; }
+.ex-chips b { padding: 10px 16px; border: 1px solid var(--line); border-radius: 99px; font-size: 14px; font-weight: 600; }
+.mq { overflow: hidden; white-space: nowrap; font-size: clamp(48px, 9vw, 140px); font-weight: 850; letter-spacing: -0.04em; line-height: 1.1; }
+.mq-track { display: inline-block; will-change: transform; }
+.mq em { margin: 0 0.3em; color: var(--rose); font-style: normal; }
+@media (max-width: 800px) { .ex-row { grid-template-columns: 1fr; gap: 6px; } }

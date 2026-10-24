@@ -1,0 +1,9 @@
+.contact { position: relative; display: grid; place-items: center; min-height: 100vh; padding: 14vh 4vw 10vh; overflow: hidden; text-align: center; background: #101010; color: #f3f0e8; }
+.ct-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ct-in { position: relative; }
+.contact h2 { font-size: clamp(40px, 9vw, 150px); font-weight: 850; letter-spacing: -0.05em; line-height: 0.95; }
+.ct-line { display: block; overflow: hidden; padding-bottom: 0.12em; }
+.ct-line > span { display: inline-block; }
+.ct-mag { display: inline-block; margin-top: 5vh; padding: 22px 38px; border-radius: 99px; background: var(--lime); color: #101010; font-size: 18px; font-weight: 800; }
+.ct-soc { display: flex; justify-content: center; gap: 2rem; margin-top: 5vh; font-weight: 600; opacity: 0.8; }
+.ct-foot { margin-top: 8vh; font-size: 13px; opacity: 0.55; }
